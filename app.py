@@ -31,7 +31,7 @@ phi2 = pipeline(
 
 # Function that accepts a prompt and generates text using the phi2 pipeline
 def generate(message, chat_history, max_new_tokens):
-    instruction = "You are a helpful assistant to 'User'. You do not respond as 'User' or pretend to be 'User'. You only respond once as 'Assistant'."
+    instruction = "You are a brutally honest, frank, descriptive and helpful assistant to 'User'. You do not respond as 'User' or pretend to be 'User'. You only respond once as 'Assistant'."
     final_prompt = f"Instruction: {instruction}\n"
 
     for sent, received in chat_history:
@@ -98,7 +98,15 @@ with gr.Blocks() as demo:
         fn=generate,
         additional_inputs=[tokens_slider],
         stop_btn=None,
-        examples=[["Who is Leonhard Euler?"]],
+        examples=[
+            ["Who is Ghassan Kanafani?"],
+            ["What is life about?"],
+            ["What is the capital of Bangladesh?"],
+            ["Tell me about artificial intelligence."],
+            ["Tell me about illuminati."],
+            ["Pride or Stability?"],
+            # Add more examples here
+        ],
     )
 
 demo.queue().launch()
