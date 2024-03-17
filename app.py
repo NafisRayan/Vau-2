@@ -88,7 +88,7 @@ with gr.Blocks() as demo:
 
     tokens_slider = gr.Slider(
         8,
-        1024,
+        128,
         value=21,
         label="Maximum new tokens",
         info="A larger `max_new_tokens` parameter value gives you longer text responses but at the cost of a slower response time.",
