@@ -88,7 +88,7 @@ with gr.Blocks() as demo:
 
     tokens_slider = gr.Slider(
         8,
-        128,
+        1024,
         value=21,
         label="Maximum new tokens",
         info="A larger `max_new_tokens` parameter value gives you longer text responses but at the cost of a slower response time.",
@@ -99,7 +99,6 @@ with gr.Blocks() as demo:
         additional_inputs=[tokens_slider],
         stop_btn=None,
         examples=[
-            ["Who is Ghassan Kanafani?"],
             ["What is life about?"],
             ["What is the capital of Bangladesh?"],
             ["Tell me about artificial intelligence."],
